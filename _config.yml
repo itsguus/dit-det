@@ -1,0 +1,21 @@
+title: Juf Det
+description: De kunstklas van Juf Det in Heeg
+url: https://jufdet.nl
+
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+  - scope:
+      path: "_soorts"
+    values:
+      layout: category
+      permalink: '/:title'
+
+collections:
+  kunst:
+    output: false
+  soorts:
+    output: true

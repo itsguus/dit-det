@@ -1,0 +1,20 @@
+{% include header.html %}
+<section class="introduction">
+    <h1 class="h2">{{ page.title }}</h1>
+    {{ content }}
+</section>
+
+<section class="nav">
+    <nav>
+        <ul>
+            <li style="background: url('{{ page.alles_image}}') center center / cover" > <a href="/alles"><span>Alle kunst</span></a></li>
+            <li style="background: url('{{ page.kommen_image}}') center center / cover" > <a href="/kommen"><span>Kommen</span></a></li>
+            <li style="background: url('{{ page.schalen_image}}') center center / cover" > <a href="/schalen"><span>Schalen</span></a></li>
+            <li style="background: url('{{ page.vazen_image}}') center center / cover" > <a href="/vazen"><span>Vazen</span></a></li>
+            <li style="background: url('{{ page.visvergieten_image}}') center center / cover" > <a href="/visvergieten"><span>Visvergieten</span></a></li>
+            <li style="background: url('{{ page.de_vis_image}}') center center / cover" > <a href="/de-vis"><span>De Vis</span></a></li>
+        </ul>
+    </nav>
+</section>
+
+{% include footer.html %}

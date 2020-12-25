@@ -1,0 +1,53 @@
+<header>
+    <a href="/">
+        <img src="/img//logo.svg" alt="Logo dit en det">
+    </a>
+</header>
+<div id="menu">
+    <input type="checkbox" onchange="document.querySelector('header').classList.toggle('hide')">
+    <div id="menubackground"></div>
+    <div id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div>
+        <a href="/" id="logo">
+            <img src="/img/logo.svg" alt="Het logo van JufDet">
+        </a>
+        <nav>
+            <img src="/img/menu.svg" alt="Menu">
+            <ul>
+                {% if page.title == "Home" %} {% else %}
+                <li><a href="/">home</a></li>
+                <div class="menudivider"></div>
+                {% endif %}
+                {% for item in site.data.navigation.mainmenu %}
+                <li><a class="{{ item.title }}" onclick="menuButton(this)" href="{{ item.url }}">{{ item.title }}</a>
+                </li>
+                <div class="menudivider"></div>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+    <div id="desktopmenu">
+        <ul>
+            {% for item in site.data.navigation.mainmenu | limit: 2 %}
+            <li class="menuitem" {% if item.title==page.title %} active {% endif %}><a class="{{ item.title }}"
+                    onclick="menuButton(this)" href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+            <li class="icon"><a href="/"><img src="/img/logo.svg" alt="Logo van JufDet"></a></li>
+            {% for item in site.data.navigation.mainmenu | offset: 2 | limit: 2 %}
+            <li class="menuitem" {% if item.title==page.title %} active {% endif %}><a class="{{ item.title }}"
+                    onclick="menuButton(this)" href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<!-- 
+    <div class="not ready overlay">
+        <h1>De site van JufDet is nog niet af.
+            <br> Deze wordt nog gemaakt.</h1>
+        </div> -->
+
+<main>

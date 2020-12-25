@@ -1,0 +1,22 @@
+</main>
+<footer>
+    <div>
+        <img class="logo" src="/img/logo_white.svg" alt="logo van JufDet">
+        <nav>
+            <ul>
+                {% for item in site.data.navigation.mainmenu %}
+                    <li><a href="{{ item.url }}">{{ item.title | replace:"Vragen","Veelgestelde Vragen" }}</a></li>
+                {% endfor %}
+            </ul> 
+        </nav>
+    </div>
+    <div id="icons">
+        <a href="mailto:detditdat@gmail.com"><img src="/img/mail_white.svg" alt="mail icon">detditdat@gmail.com</a>
+        <a href="tel:+31645932547"><img src="/img/phone_white.svg" alt="phone icon">+31 6 45 93 25 47</a>
+    </div>
+</footer>
+<div id="lightbox" class="displayNone" onclick="removeLightbox()"></div>
+<script type="text/javascript" src="/js/scripts.js"></script>
+</body>
+
+</html> 

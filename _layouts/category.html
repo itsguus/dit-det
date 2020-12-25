@@ -1,0 +1,26 @@
+{% include header.html %}
+
+<section class="introduction">
+    <h1 class="h2">{{ page.title }}</h1>
+    {{ content }}
+</section>
+
+<section class="grid">
+        <ul>
+            {% assign allekunst = site.kunst | where: "soort", page.slug %}
+            {% if page._soort == 'alles' %}
+                {% assign allekunst = site.kunst %}
+            {% endif %}
+            {% for item in allekunst %}
+            {% assign category = site.soorts | where: slug, "item.soort" %}
+            <li>{{ item.title }}
+                <img class="light" src="{{ item.image }}" alt="{{ item.title }}">
+                <div class="specs">
+                    <span class="title">{{ item.title }}</span><span class="price">&euro;{{ category[0].prijs }}</span>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+</section>
+
+{% include footer.html %}

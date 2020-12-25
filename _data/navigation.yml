@@ -1,0 +1,11 @@
+mainmenu:
+  - title: Alle kunst
+    url: /alles/
+  - title: Kommen
+    url:  /kommen/
+  - title: Schalen
+    url:  /schalen/
+  - title: Vazen
+    url:  /vazen/
+  - title: Visvergieten
+    url:  /visvergieten/
